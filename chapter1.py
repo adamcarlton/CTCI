@@ -141,4 +141,54 @@ print(rotateImage([[1, 2, 3],
        [7, 8, 9]]))
 print("\n")
 
+def zeroMatrix(arr):
+    idxList = []
+    for i in range(len(arr)):
+        for j in range(len(arr[i])):
+            if arr[i][j] == 0:
+                idxList.append((i,j))
+    return zero(arr, idxList)
 
+def zero(arr, indexList):
+    for item in indexList:
+        for idx in range(len(arr[item[0]])):
+            arr[item[0]][idx] = 0
+        for idx in range(len(arr)):
+            arr[idx][item[1]] = 0
+    
+    return arr
+
+print("Zeroing Matrix")
+print(zeroMatrix(
+    [[1, 2, 3],
+     [4, 0, 6],
+     [0, 8, 9]]
+))
+print(zeroMatrix(
+    [[1, 2, 3],
+     [4, 9, 6],
+     [0, 8, 9]]
+))
+print(zeroMatrix(
+    [[1, 2, 3],
+     [4, 11, 6],
+     [5, 8, 9]]
+))
+print("\n")
+
+def isSubstring(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    if s2 == s1:
+        return True
+    ogS2 = s2
+    s2 = s2[1:] + s2[0:1]
+    while s2 != ogS2:
+        if s2 == s1:
+            return True
+        s2 = s2[1:] + s2[0:1]
+    return False
+
+print("Determining isSubstring based on rotation")
+print(isSubstring("erbottlewat", "waterbottle"))
+print(isSubstring("erbottlewatz", "waterbottle"))
