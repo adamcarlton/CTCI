@@ -129,7 +129,7 @@ print(stringComp("bcccccccccccaba"))
 print("\n")
 
 def rotateImage(a):
-    afterImage = [[0 for x in range(len(a))] for y in range(len(a))]
+    afterImage = [[0 for _ in range(len(a))] for _ in range(len(a))]
     for i in range(len(a)):
         for j in range(len(a)):
             afterImage[j][len(a) - (i+1)] = a[i][j]
