@@ -176,7 +176,8 @@ print(zeroMatrix(
 ))
 print("\n")
 
-def isSubstring(s1, s2):
+# NOT THE ACTUAL SOLUTION, READ THE PROBLEM INCORRECTLY
+def isRotationSubstring(s1, s2):
     if len(s1) != len(s2):
         return False
     if s2 == s1:
@@ -190,5 +191,13 @@ def isSubstring(s1, s2):
     return False
 
 print("Determining isSubstring based on rotation")
-print(isSubstring("erbottlewat", "waterbottle"))
-print(isSubstring("erbottlewatz", "waterbottle"))
+print(isRotationSubstring("erbottlewat", "waterbottle"))
+print(isRotationSubstring("erbottlewatz", "waterbottle"))
+
+#How the problem would actually run
+
+def isRotation(s1, s2):
+    if s1.length != 0 and s1.length == s2.length:
+        # we are given some method called isSubstring
+        return isSubstring((s1+s1), s2)
+    return False
