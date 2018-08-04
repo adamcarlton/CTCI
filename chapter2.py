@@ -249,3 +249,88 @@ print("\n=====\n")
 print("Output")
 print(isLLPalindrome(palLL))
 print("\n")
+
+def intersection(ll1, ll2):
+    list1Length = lengthTail(ll1)
+    list2Length = lengthTail(ll2)
+    
+    if list1Length[1] != list2Length[1]:
+        return None
+    
+    diff = abs(list1Length[0] - list2Length[0])
+    
+    shorter = ll1
+    longer = ll2
+    
+    if diff != 0:
+        shorter = ll1 if list1Length[0] < list2Length[0] else ll2
+        longer = ll1 if list2Length[0] < list1Length[0] else ll2
+    
+    for _ in range(diff):
+        longer = longer.next
+    
+    while shorter != longer:
+        longer= longer.next
+        shorter = shorter.next
+    
+    return longer
+
+
+def lengthTail(ll):
+    length = 0
+    while ll:
+        length += 1
+        ll = ll.next
+    return (length, ll)
+
+node1 = LinkedList(0)
+node2 = LinkedList(1)
+node3 = LinkedList(2)
+node1.next = node2
+node2.next = node3
+node4 = LinkedList(3)
+node5 = LinkedList(4)
+node6 = node3
+node7 = LinkedList(5)
+node4.next = node5
+node5.next = node6
+node6.next = node7
+print("Testing intersection\n")
+testList1 = createNewLL()
+testList2 = createNewLL()
+print("Failing test")
+print(intersection(testList1, testList2))
+print("\n")
+print("Passing test")
+print(intersection(node1, node4))
+print("\n")
+
+def detectLoop(ll):
+    llDict = {}
+    while ll:
+        if ll in llDict:
+            return llDict[ll]
+        else:
+            llDict[ll] = ll
+        ll = ll.next
+    return None
+
+
+node1 = LinkedList(0)
+node2 = LinkedList(1)
+node3 = LinkedList(2)
+node1.next = node2
+node2.next = node3
+node4 = LinkedList(3)
+node5 = LinkedList(4)
+node6 = node4
+node3.next = node4
+node4.next = node5
+node5.next = node6
+print("Testing loop detection\n")
+testList = createNewLL()
+print("Failing test")
+print(detectLoop(testList))
+print("\n")
+print("Passing test")
+print(detectLoop(node1))
