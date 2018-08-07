@@ -1,3 +1,4 @@
+# Question 1.1
 def checkUnique(string):
     return len(set(list(string))) == len(string)
 
@@ -6,7 +7,7 @@ print(checkUnique("abcdef"))
 print(checkUnique("aabbcc"))
 print("\n")
 
-
+# Question 1.2
 def checkPerm(str1, str2):
     if len(str1) != len(str2):
         return False
@@ -35,6 +36,7 @@ print(checkPerm("abacd", "acdcb"))
 print(checkPerm("avds", "abds"))
 print("\n")
 
+# Question 1.3
 def URLify(string):
     strList = string.split(" ")
     URLstring = ""
@@ -47,6 +49,7 @@ print("Making it a URL")
 print(URLify("my name is adam"))
 print("\n")
 
+# Question 1.4
 def palindromePerm(string):
     string = string.lower()
     charDict = {}
@@ -74,6 +77,7 @@ print(palindromePerm("atata"))
 print(palindromePerm("aatta"))
 print("\n")
 
+# Question 1.5
 def oneAway(str1, str2):
     if str1 == str2:
         return True
@@ -106,6 +110,7 @@ print(oneAway("pale", "bake"))
 print(oneAway("pale", "paal"))
 print("\n")
 
+# Question 1.6
 def stringComp(string):
     valCount = 0
     finalString = ""
@@ -128,6 +133,7 @@ print(stringComp("aabbbccccaaa"))
 print(stringComp("bcccccccccccaba"))
 print("\n")
 
+# Question 1.7
 def rotateImage(a):
     afterImage = [[0 for _ in range(len(a))] for _ in range(len(a))]
     for i in range(len(a)):
@@ -141,6 +147,7 @@ print(rotateImage([[1, 2, 3],
        [7, 8, 9]]))
 print("\n")
 
+# Question 1.8
 def zeroMatrix(arr):
     idxList = []
     for i in range(len(arr)):
@@ -176,6 +183,7 @@ print(zeroMatrix(
 ))
 print("\n")
 
+# Question 1.9
 # NOT THE ACTUAL SOLUTION, READ THE PROBLEM INCORRECTLY
 def isRotationSubstring(s1, s2):
     if len(s1) != len(s2):
@@ -194,7 +202,7 @@ print("Determining isSubstring based on rotation")
 print(isRotationSubstring("erbottlewat", "waterbottle"))
 print(isRotationSubstring("erbottlewatz", "waterbottle"))
 
-#How the problem would actually run
+# How the solution would actually look
 
 def isRotation(s1, s2):
     if s1.length != 0 and s1.length == s2.length:

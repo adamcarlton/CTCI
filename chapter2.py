@@ -18,6 +18,7 @@ def showLL(linkList):
         print(linkList.data)
         linkList = linkList.next
 
+# Question 2.1
 def removeDup(node):
     noDups = []
     prev = node
@@ -65,6 +66,7 @@ removeDup(testList)
 showLL(testList)
 print("\n")
 
+# Question 2.2
 def findKthToLast(ll, k):
     node1 = ll
     node2 = ll
@@ -87,7 +89,7 @@ print("\n")
 print(findKthToLast(testList, 3))
 print("\n")
 
-
+# Question 2.3
 def deleteMiddleNode(node):
     if not node or not node.next:
         return None
@@ -109,7 +111,7 @@ print("List after removing")
 showLL(testList)
 print("\n")
 
-
+# Question 2.4
 def partition(ll, value):
     head = ll
     tail = ll
@@ -135,7 +137,7 @@ print("List after removing")
 showLL(partition(testList, 5))
 print("\n")
 
-
+# Question 2.5
 def sumLists(l1, l2):
     strL1 = ""
     strL2 = ""
@@ -216,7 +218,7 @@ print("\n")
 showLL(sumListsForward(testList1, testList2))
 print("\n")
 
-
+# Question 2.6
 def isLLPalindrome(ll):
     llStr = ""
     while ll:
@@ -250,6 +252,7 @@ print("Output")
 print(isLLPalindrome(palLL))
 print("\n")
 
+# Question 2.7
 def intersection(ll1, ll2):
     list1Length = lengthTail(ll1)
     list2Length = lengthTail(ll2)
@@ -305,6 +308,7 @@ print("Passing test")
 print(intersection(node1, node4))
 print("\n")
 
+# Question 2.8
 def detectLoop(ll):
     llDict = {}
     while ll:
